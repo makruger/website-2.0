@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Systems Administration - OpenIndiana Docs (Demo 2.0)</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-77447740-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">OpenIndiana Docs (Demo 2.0)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/about/">About OpenIndiana Docs</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/pdl/">Public Documentation License</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrib <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../contrib/getting-started/">Getting Started</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/tools/">Contributor Tools</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/roles/">Contributor Roles</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/topics/">Contributor Topics</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/style/">Contributor Style Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/markdown/">Markdown Syntax Guide</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/conduct/">OpenIndiana Code of Conduct</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/faq/">OpenIndiana FAQ</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenIndiana Handbook</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../getting-started/">Getting Started</a>
+</li>
+
+        
+            
+<li >
+    <a href="../common-tasks/">Common Tasks</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Systems Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../network-communications/">Network Communications</a>
+</li>
+
+        
+            
+<li >
+    <a href="../appendix/">Appendix</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenSolaris Books</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../books/">Book Index</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/basic/">Basic Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/advanced/">Advanced Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/express/">Solaris Express Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/trusted/">Trusted Extensions Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/develop/">Development Titles</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Development</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../dev/userland/">Building oi-userland</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../notes/content/">OpenIndiana Content Creation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/bsd/">Content Management - The BSD Approach</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/project/">Improving the OpenIndiana Project</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/books/">The OpenSolaris Redistributable Books</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../common-tasks/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../network-communications/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/makruger/website-2.0">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</a></li>
+        
+            <li><a href="#configuring-and-tuning">Configuring and Tuning</a></li>
+        
+            <li><a href="#illumos-boot-process">Illumos Boot Process</a></li>
+        
+            <li><a href="#security">Security</a></li>
+        
+            <li><a href="#zones">Zones</a></li>
+        
+            <li><a href="#storage">Storage</a></li>
+        
+            <li><a href="#zfs">ZFS</a></li>
+        
+            <li><a href="#virtualization">Virtualization</a></li>
+        
+            <li><a href="#localization">Localization</a></li>
+        
+            <li><a href="#updating-and-upgrading">Updating and Upgrading</a></li>
+        
+            <li><a href="#dtrace">Dtrace</a></li>
+        
+            <li><a href="#configuring-networking">Configuring Networking</a></li>
+        
+            <li><a href="#clustering-with-open-ha-cluster">Clustering with Open HA Cluster</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<!--
+
+The contents of this Documentation are subject to the Public Documentation License Version 1.01
+ (the "License"); you may only use this Documentation if you comply with the terms of this License.
+A copy of the License is available at http://illumos.org/license/PDL.
+
+
+The Original Documentation is _________________.
+
+The Initial Writer of the Original Documentation is ___________ Copyright (C)_________[Insert year(s)].
+All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
+
+Contributor(s): ______________________________________.
+
+Portions created by ______ are Copyright (C)_________[Insert year(s)].
+All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
+
+-->
+
+<h1 id="system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</h1>
+<p>&lt; placeholder &gt;</p>
+<h2 id="configuring-and-tuning">Configuring and Tuning</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="illumos-boot-process">Illumos Boot Process</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="security">Security</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="zones">Zones</h2>
+<h3 id="zones-running-web-stuff-in-zone-development-etc">Zones - running web stuff in zone, development, etc.</h3>
+<ul>
+<li>Need to mention some of the changes to zone management...e.g..<ul>
+<li>sys-unconfig gone.</li>
+<li>sysding replaced syscfg<ul>
+<li>now have to have DNS, root password, etc. all configured inside the zone before being able to logon using <code>zlogin -C &lt;zonename&gt;</code>, otherwise have to do <code>zlogin &lt;zonename&gt;</code>. So a fair amount of stuff has changed there.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="storage">Storage</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="zfs">ZFS</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="virtualization">Virtualization</h2>
+<h3 id="virtualization-storage-server">Virtualization Storage Server</h3>
+<ul>
+<li>Poor man's standalone ISCSI SAN linked to a 2nd machine running VMware ESXI (2 computers required)<ul>
+<li>A variation of this would be to run OI as an ESXI guest with local storage hardware "passed through" to OI and then subsequently share ZFS volumes via  ISCSI with the ESXI host itself. In this configuration, OI effectively becomes a SAN (1 computer required)</li>
+</ul>
+</li>
+</ul>
+<h3 id="virtualization-server">Virtualization Server</h3>
+<ul>
+<li>Qemu-KVM walkthrough (Does hipster even have this package?)<ul>
+<li>Yes, KVM is the package name</li>
+</ul>
+</li>
+<li>
+<p>Using VIRSH, Virt-manager, etc. (Does hipster [or any illumos distro for that matter] even have virsh or Virt-manager)</p>
+<ul>
+<li>If not, what tools are used to manage the Joyant KVM port (VMADM perhaps?)</li>
+<li>Virtualbox walkthrough - ditto...is there a package available?</li>
+</ul>
+</li>
+<li>
+<p>illumos KVM port does not support AMD processors.</p>
+</li>
+<li>Intel processors require EPT support.</li>
+</ul>
+<p>In a nutshell, most modern Intel processors such as i3, i5, i7, and Xeon support EPT.
+Most older processors such as Core2duo and Core2Quad lack EPT support, and a few of them lack virtualization support at all.</p>
+<p>You can check your processor for EPT support via the following link: <a href="http://ark.intel.com/Products/VirtualizationTechnology">http://ark.intel.com/Products/VirtualizationTechnology</a></p>
+<ul>
+<li>Hipster is currently testing a new package for managing KVM instances as SMF services.</li>
+</ul>
+<pre><code>&lt;leoric&gt; Testers needed! pkg://userland/system/qemu/kvmadm@0.10.3,5.11-2015.0.2.0:20160322T212709Z
+&lt;leoric&gt; jeffpc: I know, you like kvm :)
+&lt;jeffpc&gt; heh
+&lt;jeffpc&gt; leoric: is there documentation for it?
+&lt;leoric&gt; https://github.com/hadfl/kvmadm/blob/master/doc/kvmadm.pod
+&lt;jeffpc&gt; oh, is it http://www.kvmadm.org/ ?
+&lt;leoric&gt; yes
+&lt;jeffpc&gt; interesting
+&lt;jeffpc&gt; I'll have to give it a try at some point
+</code></pre>
+
+<h2 id="localization">Localization</h2>
+<p>&lt; placeholder &gt;</p>
+<h2 id="updating-and-upgrading">Updating and Upgrading</h2>
+<p>&lt; placeholder &gt;</p>
+<!--
+### How does one keep the system updated?
+
+<!--
+
+Some notes and reference docs for writing the IPS section:
+
+* Be sure to provide walkthroughs for both IPS and BEADMIN (as they work together).
+* [Basics of Image Packaging System (IPS) - Oracle](http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-083-ips-basics-523756.html)
+* [IPS cheat sheet PDF - Oracle](http://www.oracle.com/technetwork/server-storage/solaris11/documentation/ips-one-liners-032011-337775.pdf)
+
+-->
+
+<p>&lt; Place holder for content &gt;</p>
+<h4 id="using-pkg-to-list-packages-currently-installed-on-the-system">Using pkg to list packages currently installed on the system</h4>
+<p>&lt; Place holder for content &gt;</p>
+<h4 id="using-pkg-to-search-for-packages">Using pkg to search for packages</h4>
+<p>&lt; Place holder for content &gt;</p>
+<h4 id="using-pkg-to-update-the-system">Using pkg to update the system</h4>
+<ul>
+<li><code>pkg update -nv</code> will perform a dry run and list the changes which would have been made to the system.</li>
+<li><code>pkg update</code> will perform a normal update and print a very brief summary.</li>
+<li><code>pkg update -v</code> will perform the update and then print a summary of what was updated.</li>
+<li><code>pkg history</code> will provide basic details for previous uses of the pkg command.</li>
+</ul>
+<h3 id="how-does-one-find-and-install-more-software">How does one find and install more software?</h3>
+<p>Tips for writing this section:</p>
+<ul>
+<li><a href="https://pkgsrc.joyent.com/">https://pkgsrc.joyent.com/</a></li>
+<li><a href="https://pkgsrc.joyent.com/">https://pkgsrc.joyent.com/</a></li>
+<li>
+<p><a href="https://pkgsrc.joyent.com/install-on-illumos/">https://pkgsrc.joyent.com/install-on-illumos/</a></p>
+</li>
+<li>
+<p>Clean up and consolidate information from website and wiki about where to find additional software.</p>
+</li>
+<li>Need to answer the questions - Where and how can I install more software?</li>
+<li>Discuss the various package managers (PKGIN, IPS (PKG), etc.)</li>
+<li>Discuss the various repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.</li>
+<li>What is SFE? How does it differ from other repos?</li>
+<li>Add a page for popular available software with descriptions, etc.</li>
+<li>When they say IPS is network centric, they're not kidding;
+Packages cannot be installed locally like RPM, instead you have to setup a local network repository.<ul>
+<li>See: <a href="http://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg">http://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg</a></li>
+</ul>
+</li>
+<li>How to additional repos, etc.</li>
+<li>How to compile your own software.
+I think there is an existing wiki page for this.
+Given the limited number of IPS packages currently available, this is a pretty important subject to write about.<ul>
+<li>Also could look here (might be outdated):</li>
+<li><a href="http://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml">http://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml</a></li>
+</ul>
+</li>
+<li>How to install flash player</li>
+</ul>
+<p>--&gt;</p>
+<p>&lt; Place Holder for Content &gt;</p>
+<h4 id="using-the-pkg-publisher-and-pkg-set-publisher-commands">Using the pkg publisher and pkg set-publisher commands</h4>
+<p>The <code>pkg publisher</code> command is used to add and remove remote repositories.</p>
+<ul>
+<li><code>pkg publisher</code> - lists all the repositories configured on the system.</li>
+<li>To add a repository, use <code>pkg set-publisher -O &lt;Repository_URL&gt; &lt;Repository_Name&gt;</code></li>
+</ul>
+<h4 id="using-the-pkgrepo-command">Using the pkgrepo command</h4>
+<p>The <code>pkgrepo</code> command is primarily used for creating and working with IPS repositories.
+It can also be used for querying the contents of a repository.</p>
+<ul>
+<li><code>pkgrepo info -s &lt;repo_URL&gt;</code></li>
+<li><code>pkgrepo list -s &lt;repo_URL&gt; &lt;package_group&gt;</code></li>
+</ul>
+<h2 id="dtrace">Dtrace</h2>
+<h2 id="configuring-networking">Configuring Networking</h2>
+<h3 id="configuring-a-ups">Configuring a UPS</h3>
+<ul>
+<li>NUT?</li>
+</ul>
+<h3 id="how-does-one-perform-system-backups">How does one perform system backups?</h3>
+<ul>
+<li>Time Machine</li>
+<li>ZFS exports</li>
+<li>Bacula?</li>
+</ul>
+<h3 id="how-does-one-add-additional-users">How does one add additional users?</h3>
+<ul>
+<li>Basic system administration</li>
+<li>Basic Unix commands</li>
+</ul>
+<h3 id="working-with-storage-and-file-systems">Working with storage and file systems</h3>
+<p>&lt; Place holder for section introduction content &gt;</p>
+<h4 id="how-does-one-mount-or-import-additional-disks">How does one mount or import additional disks?</h4>
+<!--
+
+TODO:
+
+* Talk about the ZFS import command.
+* Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.
+
+-->
+
+<h4 id="commands-used">commands used</h4>
+<ul>
+<li><code>mount</code></li>
+</ul>
+<h4 id="ntfs-support-3rd-party">NTFS support - 3rd party</h4>
+<ul>
+<li><a href="http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html">http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html</a></li>
+</ul>
+<h4 id="how-does-one-mirror-their-root-zpool">How does one mirror their root zpool?</h4>
+<ul>
+<li>Adding a 2nd disk to the root pool</li>
+</ul>
+<h4 id="how-does-one-create-additional-zpools">How does one create additional zpools?</h4>
+<ul>
+<li>zpool create command<ul>
+<li>Mirrors</li>
+<li>Raidz</li>
+</ul>
+</li>
+</ul>
+<h4 id="modifying-zpool-settings-and-attributes">Modifying zpool settings and attributes</h4>
+<ul>
+<li>zpool get/set commands</li>
+</ul>
+<h4 id="modifying-zfs-file-system-settings-and-attributes">Modifying zfs file system settings and attributes</h4>
+<ul>
+<li>zfs get/set commands</li>
+</ul>
+<h4 id="how-does-one-create-additional-zfs-datasets">How does one create additional zfs datasets?</h4>
+<ul>
+<li>zfs create command</li>
+</ul>
+<h4 id="configuring-system-swap">Configuring system swap</h4>
+<ul>
+<li>zfs set command</li>
+<li>swap -l</li>
+</ul>
+<h3 id="command-line">Command Line</h3>
+<h4 id="manual-configuration-static-ip">Manual Configuration (static IP)</h4>
+<pre><code class="bash">:~$ sudo svcadm disable physical:nwam
+</code></pre>
+
+<p>Define in your IP/hostname <code>/etc/hosts</code>, if not already, an entry for this host. For example:</p>
+<pre><code class="bash">192.168.1.22 hostname hostname.local localhost loghost
+# Subsittude 192.168.1.22 for YOUR IP
+</code></pre>
+
+<p>Enable the default physical service with <code>svcadm</code> and configure the <code>interface</code>:</p>
+<pre><code class="bash">:~$ sudo svcadm enable physical:default
+</code></pre>
+
+<p>Configure interface with ipadm:</p>
+<pre><code class="bash">:~$ sudo ipadm create-addr -T static -a local=192.168.1.22/24 bge0/v4static
+</code></pre>
+
+<p>If you do not know what the interface name is (bge0 in this case); then type in</p>
+<pre><code class="bash">:~$ dladm show-link
+</code></pre>
+
+<p>or:</p>
+<pre><code class="bash">:~$ kstat -c net | grep net
+
+# look for hme0, bge0, e1000g0 or soemthing that resembles the driver in use.
+</code></pre>
+
+<p>Add gateway</p>
+<pre><code class="bash">:~$ sudo route -p add default 192.168.1.121
+</code></pre>
+
+<p>or</p>
+<pre><code class="bash">:~$ sudo nano /etc/defaultrouter
+
+# Enter in your gateways IP
+</code></pre>
+
+<p>Set DNS server(s)</p>
+<pre><code class="bash">:~$ sudo nano /etc/resolv.conf
+# Enter in the DNS server IP(s)
+nameserver 192.168.1.121
+</code></pre>
+
+<p>or</p>
+<pre><code class="bash">
+:~$ sudo sh -c 'echo &quot;nameserver 192.168.1.121&quot; &gt;&gt; /etc/resolv.conf'
+
+</code></pre>
+
+<p>Restart</p>
+<pre><code class="bash">:~$ sudo reboot
+</code></pre>
+
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+IF you cannot ping an external IP (e.g. google.com) run this command and try again.
+</div></p>
+<pre><code class="bash">:~$ sudo cp /etc/nsswitch.dns /etc/nsswitch.conf
+</code></pre>
+
+<p>credit for this section of docs go to <a href="https://www.reddit.com/user/127b">/u/127b</a></p>
+<h4 id="automatic-configuration-nwam">Automatic Configuration (NWAM)</h4>
+<ul>
+<li>How to use NWAM (network auto magic)</li>
+</ul>
+<h3 id="desktop-gui">Desktop GUI</h3>
+<h4 id="manual-configuration">Manual Configuration</h4>
+<p>&lt; Place Holder &gt;</p>
+<h4 id="automatic-configuration">Automatic Configuration</h4>
+<p>&lt; Place Holder &gt;</p>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<ul>
+<li>Make sure the network auto magic 'Location' setting is configured as 'Automatic' and not 'NoNet'</li>
+</ul>
+<h2 id="clustering-with-open-ha-cluster">Clustering with Open HA Cluster</h2>
+<p>See old sun docs</p>
+<ul>
+<li><a href="http://docs.oracle.com/cd/E19735-01/">http://docs.oracle.com/cd/E19735-01/</a></li>
+</ul>
+<p>Also see:</p>
+<ul>
+<li><a href="http://zfs-create.blogspot.nl/">http://zfs-create.blogspot.nl/</a></li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>Copyright &copy; 2016 <a href="http://www.openindiana.org">The OpenIndiana Docs Team</a></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

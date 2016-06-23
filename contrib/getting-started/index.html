@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Getting Started - OpenIndiana Docs (Demo 2.0)</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-77447740-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">OpenIndiana Docs (Demo 2.0)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/about/">About OpenIndiana Docs</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/pdl/">Public Documentation License</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrib <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li class="active">
+    <a href="./">Getting Started</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../tools/">Contributor Tools</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../roles/">Contributor Roles</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../topics/">Contributor Topics</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../style/">Contributor Style Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../markdown/">Markdown Syntax Guide</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/conduct/">OpenIndiana Code of Conduct</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/faq/">OpenIndiana FAQ</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenIndiana Handbook</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../handbook/getting-started/">Getting Started</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/common-tasks/">Common Tasks</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/systems-administration/">Systems Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/network-communications/">Network Communications</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/appendix/">Appendix</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenSolaris Books</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../books/">Book Index</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/basic/">Basic Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/advanced/">Advanced Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/express/">Solaris Express Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/trusted/">Trusted Extensions Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/develop/">Development Titles</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Development</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../dev/userland/">Building oi-userland</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../notes/content/">OpenIndiana Content Creation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/bsd/">Content Management - The BSD Approach</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/project/">Improving the OpenIndiana Project</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/books/">The OpenSolaris Redistributable Books</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../../misc/pdl/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../tools/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/makruger/website-2.0">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#getting-started-with-openindiana-docs">Getting Started with OpenIndiana Docs</a></li>
+        
+            <li><a href="#prerequisites">Prerequisites</a></li>
+        
+            <li><a href="#fork-the-openindiana-docs-repository">Fork the OpenIndiana Docs repository</a></li>
+        
+            <li><a href="#create-a-local-clone-of-your-fork">Create a local clone of your fork</a></li>
+        
+            <li><a href="#add-the-upstream-repository">Add the upstream repository</a></li>
+        
+            <li><a href="#sync-and-merge-changes-from-the-upstream-repository">Sync and merge changes from the upstream repository</a></li>
+        
+            <li><a href="#openindiana-docs-site-structure-master-branch">OpenIndiana Docs site structure (master branch)</a></li>
+        
+            <li><a href="#make-some-changes">Make some changes.</a></li>
+        
+            <li><a href="#adding-new-pages-to-the-site-menu">Adding new pages to the site menu</a></li>
+        
+            <li><a href="#visualize-your-changes-using-live-preview">Visualize your changes using live preview</a></li>
+        
+            <li><a href="#running-markdown-lint-locally">Running Markdown Lint (locally)</a></li>
+        
+            <li><a href="#running-markdown-spell-check-locally">Running Markdown spell check (locally)</a></li>
+        
+            <li><a href="#enabling-spell-checking-in-vim">Enabling spell checking in vim</a></li>
+        
+            <li><a href="#commit-and-push-your-changes">Commit and push your changes.</a></li>
+        
+            <li><a href="#send-a-pull-request">Send a pull request.</a></li>
+        
+            <li><a href="#what-happens-next">What happens next?</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<!--
+
+The contents of this Documentation are subject to the Public Documentation License Version 1.01
+(the "License"); you may only use this Documentation if you comply with the terms of this License.
+A copy of the License is available at http://illumos.org/license/PDL.
+
+The Original Documentation is _________________.
+
+The Initial Writer of the Original Documentation is ___________ Copyright (C)_________[Insert year(s)].
+All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
+
+Contributor(s): ______________________________________.
+
+Portions created by ______ are Copyright (C)_________[Insert year(s)].
+All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
+
+-->
+
+<h1 id="getting-started-with-openindiana-docs">Getting Started with OpenIndiana Docs</h1>
+<p>The process for contributing to OpenIndiana Docs is simple and follows the same best practices used in the development of the OpenIndiana distribution.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h4 id="sign-up-for-a-github-account">Sign up for a <a href="https://github.com">Github</a> account.</h4>
+<h4 id="install-and-configure-git">Install and configure Git</h4>
+<ul>
+<li>Arch: <code>pacman -S git</code></li>
+<li>Centos/RHEL: <code>yum install git</code></li>
+<li>Debian/Ubuntu: <code>apt-get install git</code></li>
+<li>Fedora: <code>dnf install git</code></li>
+<li>OpenIndiana: <code>pkg install git</code></li>
+</ul>
+<p>or see: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></p>
+<h4 id="install-pip">Install pip</h4>
+<ul>
+<li>Arch: <code>pacman -S python-pip</code></li>
+<li>Centos/RHEL: <code>yum install python-pip</code></li>
+<li>Debian/Ubuntu: <code>apt-get install python-pip</code></li>
+<li>Fedora: <code>dnf install pythop-pip</code></li>
+<li>OpenIndiana: <code>pkg install pip</code></li>
+</ul>
+<h4 id="install-gem">Install gem</h4>
+<ul>
+<li>Arch: <code>pacman -S ruby</code></li>
+<li>Centos/RHEL: <code>yum install rubygems</code></li>
+<li>Debian/Ubuntu <code>apt-get install rubgems-integration</code></li>
+<li>Fedora <code>dnf install rubygem-rails</code></li>
+<li>OpenIndiana: Installed by default as part of Ruby</li>
+</ul>
+<h4 id="install-npm">Install npm</h4>
+<ul>
+<li>Arch: <code>pacman -S nodejs npm</code></li>
+<li>Centos/RHEL: <code>yum install nodejs npm</code></li>
+<li>Debian/Ubuntu: <code>apt-get install npm</code></li>
+<li>Fedora: <code>dnf install npm</code></li>
+<li>OpenIndiana: <code>pkg install nodejs</code></li>
+</ul>
+<h4 id="install-mkdocs-mkdocs">Install MkDocs (mkdocs)</h4>
+<ul>
+<li><code>pip install mkdocs</code></li>
+</ul>
+<p>Verify your installation with <code>mkdocs --version</code></p>
+<h4 id="install-markdown-lint-mdl">Install Markdown Lint (mdl)</h4>
+<ul>
+<li><code>gem install mdl</code></li>
+</ul>
+<h4 id="optionally-install-markdown-spellcheck-mdspell">Optionally install Markdown-spellcheck (mdspell)</h4>
+<ul>
+<li><code>npm install markdown-spellcheck</code></li>
+</ul>
+<h2 id="fork-the-openindiana-docs-repository">Fork the OpenIndiana Docs repository</h2>
+<ul>
+<li>Open your web browser and sign into <a href="https://www.github.com">Github</a></li>
+<li>Browse to <a href="https://github.com/makruger/website-2.0">https://github.com/makruger/website-2.0</a></li>
+<li>Click the <strong>Fork</strong> button found in the upper right hand corner of the page.<ul>
+<li>Forking creates a server side clone of the upstream repository.</li>
+</ul>
+</li>
+</ul>
+<h2 id="create-a-local-clone-of-your-fork">Create a local clone of your fork</h2>
+<pre><code class="bash">git clone https://github.com/your-user-name/website-2.0.git
+</code></pre>
+
+<h2 id="add-the-upstream-repository">Add the upstream repository</h2>
+<pre><code class="bash">cd website-2.0
+git remote add upstream https://github.com/makruger/website-2.0.git
+</code></pre>
+
+<p>Verify things with <code>git remote -v</code></p>
+<p>You should now see:</p>
+<pre><code class="bash">remote -v
+origin    https://github.com/your-user-name/website-2.0.git(fetch)
+origin    https://github.com/your-user-name/website-2.0.git (push)
+upstream  https://github.com/makruger/website-2.0.git(fetch)
+upstream  https://github.com/makruger/website-2.0.git (push)
+</code></pre>
+
+<h2 id="sync-and-merge-changes-from-the-upstream-repository">Sync and merge changes from the upstream repository</h2>
+<p>Periodically you will want to <em>rebase</em> your local copy by bringing in changes from the upstream repository.</p>
+<pre><code class="bash">git fetch upstream
+git checkout master
+git merge upstream/master
+</code></pre>
+
+<h2 id="openindiana-docs-site-structure-master-branch">OpenIndiana Docs site structure (master branch)</h2>
+<p>All site development occurs within the master branch.</p>
+<pre><code class="markdown">website-2.0/
+├── deploy.sh
+├── docs/
+├── link_validator.py
+├── markdownlint-rules.rb
+├── mkdocs.yml
+├── README.md
+├── site/
+└── TODO.md
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>website-2.0/</td>
+<td>site root folder</td>
+</tr>
+<tr>
+<td>deploy.sh</td>
+<td>site deployment script</td>
+</tr>
+<tr>
+<td>docs/</td>
+<td>documentation root folder</td>
+</tr>
+<tr>
+<td>link_validator.py</td>
+<td>URL validation script</td>
+</tr>
+<tr>
+<td>markdownlint-rules.rb</td>
+<td>Markdown Lint configuration</td>
+</tr>
+<tr>
+<td>mkdocs.yml</td>
+<td>Site and menu configuration</td>
+</tr>
+<tr>
+<td>README.md</td>
+<td>Git readme</td>
+</tr>
+<tr>
+<td>site/</td>
+<td>Live preview folder (no edits)</td>
+</tr>
+</tbody>
+</table>
+<!-- NOTE: -->
+
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>WARNING:</strong>
+<div class="well"></p>
+<ul>
+<li>Please do <strong>NOT</strong> perform any work within the <code>site/</code> folder.<ul>
+<li>This is a temporary folder created by MkDocs when the site is run locally in preview mode.</li>
+</ul>
+</li>
+<li>Also, please do <strong>NOT</strong> perform any work within the gh-pages branch.<ul>
+<li>The gh-branch is destroyed and rebuild each time the site is deployed to GitHub pages.
+</div></li>
+</ul>
+</li>
+</ul>
+<pre><code class="markdown">docs/
+├── contrib/
+├── dev/
+├── favicon.ico
+├── handbook/
+├── index.md
+├── misc/
+└── notes/
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrib/</td>
+<td>Contributor guidance docs</td>
+</tr>
+<tr>
+<td>dev/</td>
+<td>Development oriented docs</td>
+</tr>
+<tr>
+<td>favicon.ico</td>
+<td>Site favicon icon</td>
+</tr>
+<tr>
+<td>handbook/</td>
+<td>OpenIndiana handbook docs</td>
+</tr>
+<tr>
+<td>index.md</td>
+<td>Site front page</td>
+</tr>
+<tr>
+<td>misc/</td>
+<td>Miscellaneous docs</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>Doc team reference notes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="make-some-changes">Make some changes.</h2>
+<p>Open your favorite text editor and begin authoring content.</p>
+<p>For example: <code>vim somefile.md</code></p>
+<p>Some text editors (Atom, VIM, etc.) natively include Markdown syntax highlighting (or offer it as a plugin).</p>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Major changes should be performed within a separate branch, appropriately named to reflect the changes being made.
+</div></p>
+<p>For a list of subject to write about:</p>
+<ul>
+<li>See the site TODO list.</li>
+<li>Have a look at the site Github issues list.</li>
+<li>See the <a href="../notes/topics.md">Topics</a> for a list of suggestions.</li>
+<li>Write a new tutorial, or complete a small section of the handbook, etc.</li>
+<li>Consult with other doc team contributors for even more ideas.</li>
+</ul>
+<h2 id="adding-new-pages-to-the-site-menu">Adding new pages to the site menu</h2>
+<p>Site configuration settings and menus are located in <code>mkdocs.yml</code>.
+To add a page to the menu, simply add a line to this file.
+See the code snippet below for examples.</p>
+<pre><code class="markdown">- Docs:
+        - 'OpenIndiana Code of Conduct': misc/conduct.md
+        - 'OpenIndiana FAQ': misc/faq.md
+        - 'OpenIndiana Handbook': handbook/handbook.md
+        - OpenSolaris Books:
+                - 'Book Index': books/index.md
+                - 'Basic Administration': books/basic.md
+                - 'Advanced Administration': books/advanced.md
+                - 'Solaris Express Administration': books/express.md
+                - 'Trusted Extensions Administration': books/trusted.md
+                - 'Development Titles': books/develop.md
+</code></pre>
+
+<h2 id="visualize-your-changes-using-live-preview">Visualize your changes using live preview</h2>
+<p>To assist with the content authoring process, it may be helpful to visualize your changes using a live preview.</p>
+<ul>
+<li>From the root of the website-2.0 folder:<ul>
+<li>Type: <code>mkdocs serve</code></li>
+<li>Open your web browser to 127.0.0.1:8000.</li>
+</ul>
+</li>
+</ul>
+<p>To shut down the live preview web server, use [CTRL] + [C].</p>
+<h2 id="running-markdown-lint-locally">Running Markdown Lint (locally)</h2>
+<p>Markdown Lint is used to check your changes for Markdown syntax errors.
+Prior to submitting a pull request (PR), please consider running Markdown Lint locally on your computer.</p>
+<p>From the root site folder (website-2.0) execute the following command:</p>
+<pre><code class="bash">mdl -s markdownlint-rules.rb .
+</code></pre>
+
+<p>Markdown Lint will automatically traverse the entire folder structure looking for problems.
+Alternately you may also run <code>mdl</code> on a specific file.
+Simply replace the period (.) with the path to the file.</p>
+<h2 id="running-markdown-spell-check-locally">Running Markdown spell check (locally)</h2>
+<p>Markdown spell check or <code>mdspell</code> is used to check for spelling errors.
+Prior to submitting a PR, please consider running <code>mdspell</code> locally on your computer.</p>
+<pre><code class="bash">mdspell --en-us -x -n -ran &quot;**/*.md&quot;
+</code></pre>
+
+<p><code>mdspell</code> will automatically crawl the entire folder structure looking for spelling mistakes.
+Alternatively you may also run <code>mdspell</code> on a specific file. Simply replace <code>"**/*.md"</code> with the path to the file.</p>
+<h2 id="enabling-spell-checking-in-vim">Enabling spell checking in <code>vim</code></h2>
+<p>You can invoke spell checking in your current session by inputting the command:</p>
+<p><code>:set spell spelllang=en_us</code></p>
+<p>or if you would like a more permanent solution, you can enable spell checking in you <code>.vimrc</code> by adding the line:</p>
+<p><code>set spelllang=en_us</code></p>
+<p>to your <code>.vimrc</code></p>
+<p>Misspelled words will now be highlighted (color varies dependent on your .Xresources file)</p>
+<h3 id="keyboard-shortcuts-for-spell-checking-in-vim">Keyboard shortcuts for spell checking in <code>vim</code></h3>
+<ul>
+<li><code>]s</code> to find the previously misspelled word.</li>
+<li><code>[s</code> to find the next misspelled word.</li>
+<li>With the cursor at the beginning of a word, use <code>z=</code> to bring up a list of suggested replacements.</li>
+<li><code>zg</code> will add a word to the local dictionary exception file.</li>
+<li><code>zw</code> is used to mark a word as incorrect.</li>
+</ul>
+<h2 id="commit-and-push-your-changes">Commit and push your changes.</h2>
+<pre><code class="bash">git status
+git add some-file-you-just-edited
+git commit -m 'your commit message'
+git push
+</code></pre>
+
+<h2 id="send-a-pull-request">Send a pull request.</h2>
+<ul>
+<li>Open your web browser to your forked copy of the OpenIndiana Docs repository.</li>
+</ul>
+<p>For example: <code>https://github.com/your-user-name/website-2.0</code></p>
+<ul>
+<li>Click the button for <em>New pull request</em>.</li>
+<li>Add some notes about your change.</li>
+<li>Submit your PR (pull request).</li>
+</ul>
+<h2 id="what-happens-next">What happens next?</h2>
+<p>At this point someone with commit rights to the upstream repository will examine your changes.
+If no corrections are required, your changes will be accepted and merged into the upstream repository.</p>
+<p>Upon commit, publishing occurs automatically using Travis-CI.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>Copyright &copy; 2016 <a href="http://www.openindiana.org">The OpenIndiana Docs Team</a></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

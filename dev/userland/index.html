@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Building oi-userland - OpenIndiana Docs (Demo 2.0)</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-77447740-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">OpenIndiana Docs (Demo 2.0)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/about/">About OpenIndiana Docs</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/pdl/">Public Documentation License</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrib <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../contrib/getting-started/">Getting Started</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/tools/">Contributor Tools</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/roles/">Contributor Roles</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/topics/">Contributor Topics</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/style/">Contributor Style Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contrib/markdown/">Markdown Syntax Guide</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../misc/conduct/">OpenIndiana Code of Conduct</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/faq/">OpenIndiana FAQ</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenIndiana Handbook</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../handbook/getting-started/">Getting Started</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/common-tasks/">Common Tasks</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/systems-administration/">Systems Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/network-communications/">Network Communications</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../handbook/appendix/">Appendix</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenSolaris Books</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../books/">Book Index</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/basic/">Basic Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/advanced/">Advanced Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/express/">Solaris Express Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/trusted/">Trusted Extensions Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/develop/">Development Titles</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Development</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">Building oi-userland</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../notes/content/">OpenIndiana Content Creation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/bsd/">Content Management - The BSD Approach</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/project/">Improving the OpenIndiana Project</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../notes/books/">The OpenSolaris Redistributable Books</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../../books/develop/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../notes/content/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/makruger/website-2.0">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#quick-start-for-oi-userland">Quick start for oi-userland</a></li>
+        
+            <li><a href="#clone-the-repository-from-openindianas-github-it-is-set-as-origin">Clone the repository from OpenIndiana's Github, it is set as origin:</a></li>
+        
+            <li><a href="#add-your-github-repository-as-remote">Add your Github repository as remote:</a></li>
+        
+            <li><a href="#print-for-checking">Print for checking:</a></li>
+        
+            <li><a href="#initial-setup-including-creation-of-local-on-disk-repository-and-check">Initial setup including creation of local on-disk repository and check:</a></li>
+        
+            <li><a href="#every-time-you-add-or-modify-a-component-create-a-new-branch">Every time you add or modify a component, create a new branch:</a></li>
+        
+            <li><a href="#keep-this-branch-synchronized-with-originoihipster">Keep this branch synchronized with origin/oi/hipster:</a></li>
+        
+            <li><a href="#a-component-consists-of-several-files">A component consists of several files:</a></li>
+        
+            <li><a href="#here-is-a-list-of-important-targets-for-gmake">Here is a list of important targets for gmake</a></li>
+        
+            <li><a href="#first-you-need-to-make-sure-that-gmake-prep-passes-so-you-can-start-by-changing-the-components-metadata">First you need to make sure that gmake prep passes, so you can start by changing the component's metadata:</a></li>
+        
+            <li><a href="#patch-build-and-install">Patch, Build and install</a></li>
+        
+            <li><a href="#prepare-the-ips-manifest">Prepare the IPS manifest</a></li>
+        
+            <li><a href="#publish-the-package">Publish the package</a></li>
+        
+            <li><a href="#submit-your-component">Submit your component</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<!--
+
+The contents of this Documentation are subject to the Public Documentation License Version 1.01
+(the "License"); you may only use this Documentation if you comply with the terms of this License.
+A copy of the License is available at http://illumos.org/license/PDL.
+
+The Original Documentation is _________________.
+
+The Initial Writer of the Original Documentation is Aurelien Larcher Copyright (C) 2016 [Insert year(s)].
+All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
+
+Contributor(s): Johnathan Jenkins, Michael Kruger, Theodore Seán Tubbs
+
+Portions created by ______ are Copyright (C)_________[Insert year(s)].
+All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
+
+-->
+
+<h1 id="quick-start-for-oi-userland">Quick start for oi-userland</h1>
+<h3 id="clone-the-repository-from-openindianas-github-it-is-set-as-origin">Clone the repository from OpenIndiana's Github, it is set as origin:</h3>
+<pre><code class="bash">git clone https://github.com/OpenIndiana/oi-userland.git
+cd oi-userland
+</code></pre>
+
+<h3 id="add-your-github-repository-as-remote">Add your Github repository as remote:</h3>
+<pre><code class="bash">git remote add my_name https://github.com/my_name/oi-userland.git
+</code></pre>
+
+<h3 id="print-for-checking">Print for checking:</h3>
+<pre><code class="bash">git remote -v
+</code></pre>
+
+<h3 id="initial-setup-including-creation-of-local-on-disk-repository-and-check">Initial setup including creation of local on-disk repository and check:</h3>
+<pre><code class="bash">gmake setup
+gmake check-environment
+</code></pre>
+
+<h3 id="every-time-you-add-or-modify-a-component-create-a-new-branch">Every time you add or modify a component, create a new branch:</h3>
+<pre><code class="bash">git checkout -b my_feature
+</code></pre>
+
+<h3 id="keep-this-branch-synchronized-with-originoihipster">Keep this branch synchronized with origin/oi/hipster:</h3>
+<pre><code class="bash">git pull --rebase origin oi/hipster
+</code></pre>
+
+<p>Your local branch is forwarded to the last commit of oi/hipster and your additional commits are kept on top of the stack.</p>
+<h3 id="a-component-consists-of-several-files">A component consists of several files:</h3>
+<ul>
+<li><code>Makefile</code>: the recipe to build the software (in the <code>build/$MARCH</code> directory) and install it locally (to the <code>build/proto</code> directory)</li>
+<li><code>patches/</code>: directory containing patches applied before the configuration</li>
+<li><code>*.p5m</code>: manifests used to generate the IPS package</li>
+<li><code>$(COMPONENT_NAME).license</code>: file containing the licenses applicable to the software</li>
+</ul>
+<h3 id="here-is-a-list-of-important-targets-for-gmake">Here is a list of important targets for <code>gmake</code></h3>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clobber</code></td>
+<td>cleans up the component directory completely, including deleting source</td>
+</tr>
+<tr>
+<td><code>download</code></td>
+<td>fetches the source archive and verify its <code>SHA256</code> sum</td>
+</tr>
+<tr>
+<td><code>prep</code></td>
+<td>extract and apply patches</td>
+</tr>
+<tr>
+<td><code>build</code></td>
+<td>configure and build</td>
+</tr>
+<tr>
+<td><code>install</code></td>
+<td>install locally</td>
+</tr>
+<tr>
+<td><code>sample-manifest</code></td>
+<td>generate an IPS manifest based on the files installed locally</td>
+</tr>
+<tr>
+<td><code>publish</code></td>
+<td>generate dependencies and publish the package to the local repository</td>
+</tr>
+</tbody>
+</table>
+<h3 id="first-you-need-to-make-sure-that-gmake-prep-passes-so-you-can-start-by-changing-the-components-metadata">First you need to make sure that <code>gmake prep</code> passes, so you can start by changing the component's metadata:</h3>
+<p>Example with <code>components/libjpeg6-ijg/Makefile</code>:</p>
+<pre><code class="bash">COMPONENT_NAME# libjpeg6-ijg
+COMPONENT_VERSION# 6.0.2
+LIBJPEG_API_VERSION# 6b
+COMPONENT_FMRI# image/library/libjpeg6-ijg
+COMPONENT_CLASSIFICATION# System/Multimedia Libraries
+COMPONENT_PROJECT_URL# http://www.ijg.org/
+COMPONENT_SUMMARY# libjpeg - Independent JPEG Group library version 6b
+COMPONENT_SRC# jpeg-$(LIBJPEG_API_VERSION)
+COMPONENT_ARCHIVE# $(COMPONENT_NAME)-$(COMPONENT_VERSION).tar.gz
+COMPONENT_ARCHIVE_HASH# \
+ sha256:75c3ec241e9996504fe02a9ed4d12f16b74ade713972f3db9e65ce95cd27e35d
+COMPONENT_ARCHIVE_URL# http://www.ijg.org/files/jpegsrc.v$(LIBJPEG_API_VERSION).tar.gz
+COMPONENT_LICENSE# IJG,GPLv2.0
+COMPONENT_LICENSE_FILE# $(COMPONENT_NAME).license
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMPONENT_NAME</td>
+<td>libjpeg6-ijg</td>
+<td>Use the same name as in SFE or other Illumos userlands if applicable, otherwise follow Debian</td>
+</tr>
+<tr>
+<td>COMPONENT_VERSION</td>
+<td>6.0.2</td>
+<td>Should be numerical only, not letters</td>
+</tr>
+<tr>
+<td>LIBJPEG_API_VERSION</td>
+<td>6b</td>
+<td>Local variable declared in the Makefile should be prefixed with the component's name</td>
+</tr>
+<tr>
+<td>COMPONENT_FMRI</td>
+<td>image/library/libjpeg6-ijg</td>
+<td>Follow the convention for the FMRI, check a similar component</td>
+</tr>
+<tr>
+<td>COMPONENT_CLASSIFICATION</td>
+<td>System/Multimedia Libraries</td>
+<td>This entry should be in the <a href="http://hub.openindiana.ninja/?q#content/opensolaris-ips-classification-2008">OpenSolaris IPS Classification 2008</a></td>
+</tr>
+<tr>
+<td>COMPONENT_PROJECT_URL</td>
+<td>http://www.ijg.org/</td>
+<td>Upstream project website</td>
+</tr>
+<tr>
+<td>COMPONENT_SUMMARY</td>
+<td>libjpeg - Independent JPEG Group library version 6b</td>
+<td>Short description, one-liner</td>
+</tr>
+<tr>
+<td>COMPONENT_SRC</td>
+<td>jpeg-$(LIBJPEG_API_VERSION)</td>
+<td></td>
+</tr>
+<tr>
+<td>COMPONENT_ARCHIVE</td>
+<td>$(COMPONENT_NAME)-$(COMPONENT_VERSION).tar.gz</td>
+<td>Only change the extension</td>
+</tr>
+<tr>
+<td>COMPONENT_ARCHIVE_HASH</td>
+<td>sha256:75c3ec241e9996504fe02a9ed4d12f16b74ade713972f3db9e65ce95cd27e35d</td>
+<td>To be generated</td>
+</tr>
+<tr>
+<td>COMPONENT_ARCHIVE_URL</td>
+<td>http://www.ijg.org/files/jpegsrc.v$(LIBJPEG_API_VERSION).tar.gz</td>
+<td>Full path with archive filename if not equal to COMPONENT_ARCHIVE</td>
+</tr>
+<tr>
+<td>COMPONENT_LICENSE</td>
+<td>IJG,GPLv2.0</td>
+<td>Comma separated list of licenses</td>
+</tr>
+<tr>
+<td>COMPONENT_LICENSE_FILE</td>
+<td>$(COMPONENT_NAME).license</td>
+<td>Do not change</td>
+</tr>
+</tbody>
+</table>
+<p>Run the first targets:</p>
+<ul>
+<li><code>gmake download</code>: if the checksum fails, replace <code>COMPONENT_ARCHIVE_HASH</code> with the actual hash.</li>
+<li><code>gmake unpack</code>: once the sources are extracted, concatenate the license files to $(COMPONENT_NAME).license, here "libjpeg6-ijg.license".</li>
+<li><code>gmake patch</code>: to apply patches.</li>
+</ul>
+<p>If you do not have any patches, you can as well run <code>gmake prep</code> directly.</p>
+<h3 id="patch-build-and-install">Patch, Build and install</h3>
+<p>The included .mk file depends on the build system, example:</p>
+<pre><code class="bash">include $(WS_TOP)/make-rules/configure.mk
+</code></pre>
+
+<p>Look in the <code>make-rules</code> directory for more</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ant.mk</code></td>
+<td>Ant</td>
+</tr>
+<tr>
+<td><code>attpackagemake.mk</code></td>
+<td>AT&amp;T package tools</td>
+</tr>
+<tr>
+<td><code>cmake.mk</code></td>
+<td>CMake</td>
+</tr>
+<tr>
+<td><code>configure.mk</code></td>
+<td>Autotools</td>
+</tr>
+<tr>
+<td><code>gem.mk</code></td>
+<td>Ruby</td>
+</tr>
+<tr>
+<td><code>justmake.mk</code></td>
+<td>plain Makefile</td>
+</tr>
+<tr>
+<td><code>makemaker.mk</code></td>
+<td>Perl</td>
+</tr>
+<tr>
+<td><code>setup.py</code></td>
+<td>Python distutils</td>
+</tr>
+</tbody>
+</table>
+<p>Read the <code>.mk</code> file to see which variables you can modify, in general you can find variables such as:</p>
+<ul>
+<li><code>*_ENV</code></li>
+<li><code>*_OPTIONS</code></li>
+<li><code>PRE_*_ACTION</code></li>
+<li><code>POST_*_ACTION</code></li>
+</ul>
+<p>For example, you may add this line for an Autotools-based component:</p>
+<pre><code class="bash">CONFIGURE_OPTIONS+# --enable-shared
+</code></pre>
+
+<p>It is now up to you to: patch, play with the configuration flags and such...
+Do not hesitate to look around to see how it is done in other components !</p>
+<h3 id="prepare-the-ips-manifest">Prepare the IPS manifest</h3>
+<p>When the <code>install</code> target passes, you can run:</p>
+<pre><code class="bash">gmake sample-manifest
+</code></pre>
+
+<p>to generate a manifest from the list of installed files.</p>
+<p>Copy the file <code>build/manifest-generated.p5m</code> to <code>$(COMPONENT_NAME).p5m</code> and edit it:</p>
+<ul>
+<li>Add you name as contributor</li>
+<li>Remove unused entries from the manifest:<ul>
+<li>directories: <code>:%g/^dir/d</code> (Vim)</li>
+<li>static libs: <code>:%g/.a$/d</code> (Vim)</li>
+<li>libtool files:: <code>:%g/.la$/d</code> (Vim)</li>
+<li>Python *.pyc: <code>:%g/.pyc$/d</code> (Vim)</li>
+</ul>
+</li>
+</ul>
+<p>For some components, specific rules need to be applied: they can be implemented with <em>transforms</em>.
+Some example can be found in the directory with the same name at the root directory of oi-userland.</p>
+<h3 id="publish-the-package">Publish the package</h3>
+<p>Run <code>gmake publish</code>: if the dependencies are resolved and the manifest is valid, your package is published to the local repository.
+You can then install your package locally and test it.</p>
+<p>To be able to search for the new packages in the local repository you need to rebuild search indexes:</p>
+<pre><code class="bash">pkgrepo refresh -s /path/to/my_repo
+</code></pre>
+
+<p>You can even rebuild the entire metadata:</p>
+<pre><code class="bash">pkgrepo rebuild -s /path/to/my_repo
+</code></pre>
+
+<h3 id="submit-your-component">Submit your component</h3>
+<p>Run <code>gmake clobber</code> then <code>gmake publish</code> to check that the component is publishing correctly.</p>
+<p>If it is the case, you can cleanup your branch then submit a pull-request.</p>
+<p>First you need to <em>squash</em> all your commits into one, check how many commits are to be considered:</p>
+<pre><code class="bash">git log
+</code></pre>
+
+<p>then</p>
+<pre><code class="bash">git rebase -i HEAD~N
+</code></pre>
+
+<p>with N the number of commits to be squashed, and follow the instructions: the letter 's' should be put in place of 'pick' for the N - 1 commits before the last.</p>
+<p>If you made a mistake with the commit message or author, use:</p>
+<pre><code class="bash">git commit --amend
+</code></pre>
+
+<p>with the relevant option.</p>
+<p>Then you are ready to push:</p>
+<pre><code class="bash">git push my_name my_feature
+</code></pre>
+
+<p>or</p>
+<pre><code class="bash">git push -f my_name my_feature
+</code></pre>
+
+<p>if the branch you just rebased had already been pushed: since the history is rewritten you need to force the push, be careful.</p>
+<p>Go to your Github profile and open a pull request.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>Copyright &copy; 2016 <a href="http://www.openindiana.org">The OpenIndiana Docs Team</a></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
